@@ -1,8 +1,9 @@
 {
-  "name": "ckeditor5-build-harrison" ,
+  "name": "@Harrison-Dynamics/ckeditor5-build-harrison" ,
   "version": "1.0.0",
   "description": "harrison ckeditor build",
   "main": "./build/build.js",
+  "repository": "git://github.com/Harrison-Dynamics/ckeditor5-build-harrison.git",
   "scripts": {
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -38,5 +39,8 @@
     "terser-webpack-plugin": "^4.2.3",
     "webpack": "^5.58.1",
     "webpack-cli": "^4.9.0"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   }
 }
