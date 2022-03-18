@@ -1,7 +1,7 @@
 {
   "name": "@Harrison-Dynamics/ckeditor5-build-harrison",
-  "version": "1.0.0",
-  "description": "harrison ckeditor build",
+  "version": "33.0.0-hd1",
+  "description": "Harrison CKEditor build",
   "main": "./build/build.js",
   "repository": "git://github.com/Harrison-Dynamics/ckeditor5-build-harrison.git",
   "scripts": {
