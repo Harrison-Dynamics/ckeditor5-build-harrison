@@ -1,0 +1,8 @@
+.documentTag {
+    background: #eaebfc;
+    line-height: 1em;
+}
+
+.documentTag::selection {
+    display: none;
+}

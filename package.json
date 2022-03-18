@@ -1,5 +1,5 @@
 {
-  "name": "@Harrison-Dynamics/ckeditor5-build-harrison" ,
+  "name": "@Harrison-Dynamics/ckeditor5-build-harrison",
   "version": "1.0.0",
   "description": "harrison ckeditor build",
   "main": "./build/build.js",
@@ -11,27 +11,30 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ckeditor/ckeditor5-adapter-ckfinder": "^32.0.0",
-    "@ckeditor/ckeditor5-autoformat": "^32.0.0",
-    "@ckeditor/ckeditor5-basic-styles": "^32.0.0",
-    "@ckeditor/ckeditor5-block-quote": "^32.0.0",
-    "@ckeditor/ckeditor5-editor-classic": "^32.0.0",
-    "@ckeditor/ckeditor5-essentials": "^32.0.0",
-    "@ckeditor/ckeditor5-heading": "^32.0.0",
-    "@ckeditor/ckeditor5-image": "^32.0.0",
-    "@ckeditor/ckeditor5-indent": "^32.0.0",
-    "@ckeditor/ckeditor5-link": "^32.0.0",
-    "@ckeditor/ckeditor5-list": "^32.0.0",
-    "@ckeditor/ckeditor5-paragraph": "^32.0.0",
-    "@ckeditor/ckeditor5-paste-from-office": "^32.0.0",
-    "@ckeditor/ckeditor5-table": "^32.0.0",
-    "@ckeditor/ckeditor5-typing": "^32.0.0"
+    "@ckeditor/ckeditor5-adapter-ckfinder": "^33.0.0",
+    "@ckeditor/ckeditor5-alignment": "^33.0.0",
+    "@ckeditor/ckeditor5-autoformat": "^33.0.0",
+    "@ckeditor/ckeditor5-basic-styles": "^33.0.0",
+    "@ckeditor/ckeditor5-block-quote": "^33.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^33.0.0",
+    "@ckeditor/ckeditor5-essentials": "^33.0.0",
+    "@ckeditor/ckeditor5-heading": "^33.0.0",
+    "@ckeditor/ckeditor5-image": "^33.0.0",
+    "@ckeditor/ckeditor5-indent": "^33.0.0",
+    "@ckeditor/ckeditor5-link": "^33.0.0",
+    "@ckeditor/ckeditor5-list": "^33.0.0",
+    "@ckeditor/ckeditor5-paragraph": "^33.0.0",
+    "@ckeditor/ckeditor5-paste-from-office": "^33.0.0",
+    "@ckeditor/ckeditor5-source-editing": "^33.0.0",
+    "@ckeditor/ckeditor5-table": "^33.0.0",
+    "@ckeditor/ckeditor5-typing": "^33.0.0"
   },
   "devDependencies": {
-    "@ckeditor/ckeditor5-core": "^32.0.0",
+    "@ckeditor/ckeditor5-core": "^33.0.0",
     "@ckeditor/ckeditor5-dev-utils": "^28.0.1",
     "@ckeditor/ckeditor5-dev-webpack-plugin": "^28.0.1",
-    "@ckeditor/ckeditor5-theme-lark": "^32.0.0",
+    "@ckeditor/ckeditor5-inspector": "^3.1.0",
+    "@ckeditor/ckeditor5-theme-lark": "^33.0.0",
     "css-loader": "^5.2.7",
     "postcss-loader": "^4.3.0",
     "raw-loader": "^4.0.1",
@@ -41,6 +44,6 @@
     "webpack-cli": "^4.9.0"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   }
 }
