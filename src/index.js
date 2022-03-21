@@ -9,6 +9,7 @@ import Heading from '@ckeditor/ckeditor5-heading/src/heading'
 import Indent from '@ckeditor/ckeditor5-indent/src/indent'
 import Image from '@ckeditor/ckeditor5-image/src/image'
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption'
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle'
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar'
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload'
@@ -27,16 +28,21 @@ import DocumentTag from './ckeditor5-document-tag/documentTag'
 export default class HarrisonEditor extends ClassicEditorBase {}
 
 HarrisonEditor.builtinPlugins = [
-  	Essentials,
+    Alignment,
 	Autoformat,
+    Base64UploadAdapter,
 	Bold,
-	Italic,
+    DocumentTag,
+  	Essentials,
 	Heading,
 	Image,
 	ImageCaption,
+    ImageResize,
 	ImageStyle,
 	ImageToolbar,
+    ImageUpload,
 	Indent,
+	Italic,
 	Link,
 	List,
 	Paragraph,
@@ -44,12 +50,12 @@ HarrisonEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	TextTransformation,
-    DocumentTag,
 ]
 
 HarrisonEditor.defaultConfig = {
     toolbar: [
       'bold', 'italic', '|',
+      "outdent", "indent", "alignment", '|',
       'link', '|',
       'numberedList', 'bulletedList', '|',
       'insertTable', 'tableColumn', 'tableRow', 'mergeTableCells', '|',
