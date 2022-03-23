@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CKEditor5 Harrison Build – development sample</title>
+	<style>
+		body {
+			max-width: 800px;
+			margin: 20px auto;
+		}
+	</style>
+</head>
+<body>
+
+<div id="editor1">
+    <p>
+    Prezența membrilor <span class="documentTag ck-widget ck-widget_selected" draggable="true" contenteditable="false">{{BENEFICIAR}}</span> la ședințele CA este obligatorie. CA este legal întrunit în ședință în prezența a cel puțin jumătate plus unu din totalul membrilor acestuia.
+    </p>
+    <p>
+    La toate şedinţele CA, reprezentantul elevilor, care a împlinit vârsta de 18 ani, participă cu drept de vot. În situaţiile în care la nivelul unităţii de învăţământ nu există elevi care au împlinit vârsta de 18 ani, reprezentantul elevilor este desemnat de consiliul elevilor şi participă cu statut de observator la şedinţele CA, fiind convocat obligatoriu de preşedintele CA la şedinţele în care se dezbat problematici privind elevii.
+    </p>
+    <p>
+    </p>
+</div>
+
+<script src="../build/build.js"></script>
+<script src="../node_modules/@ckeditor/ckeditor5-inspector/build/inspector.js"></script>
+<script>
+    HarrisonEditor.create( document.querySelector( '#editor1' ), {
+        documentTagConfig: {
+            tags: [
+                {'label': 'Beneficiar', 'tag': 'BENEFICIAR'},
+                {'label': 'Nr. Editie', 'tag': 'NR_EDITIE'},
+                {'label': 'Nr. Revizie', 'tag': 'NR_REVIZIE'}
+            ],
+            strictTags: false
+        }
+    })
+	    .then( editor => {
+			window.editor = editor;
+            CKEditorInspector.attach( editor );
+		} )
+		.catch( error => {
+			console.error( 'There was a problem initializing the editor.', error );
+		} );
+</script>
+</body>
+</html>

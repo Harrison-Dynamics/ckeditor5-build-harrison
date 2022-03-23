@@ -1,0 +1,8 @@
+.ck .documentTag {
+    background: #eaebfc;
+    line-height: 1em;
+}
+
+.ck .documentTag::selection {
+    display: none;
+}

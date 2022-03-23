@@ -47,11 +47,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
+                test:  /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
                 use: [ 'raw-loader' ]
             },
             {
-                test: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css$/,
+                test: /.+[\/\\]theme[\/\\].+.css/,
                 use: [
                     {
                         loader: 'style-loader',
