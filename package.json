@@ -1,6 +1,6 @@
 {
   "name": "@Harrison-Dynamics/ckeditor5-build-harrison",
-  "version": "33.0.0-hd3",
+  "version": "33.0.0-hd5",
   "description": "Harrison CKEditor build",
   "main": "./build/build.js",
   "repository": "git://github.com/Harrison-Dynamics/ckeditor5-build-harrison.git",
@@ -18,6 +18,7 @@
     "@ckeditor/ckeditor5-block-quote": "^33.0.0",
     "@ckeditor/ckeditor5-editor-classic": "^33.0.0",
     "@ckeditor/ckeditor5-essentials": "^33.0.0",
+    "@ckeditor/ckeditor5-font": "^33.0.0",
     "@ckeditor/ckeditor5-heading": "^33.0.0",
     "@ckeditor/ckeditor5-image": "^33.0.0",
     "@ckeditor/ckeditor5-indent": "^33.0.0",

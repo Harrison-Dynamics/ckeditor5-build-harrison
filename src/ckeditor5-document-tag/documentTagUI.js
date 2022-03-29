@@ -16,18 +16,18 @@ export default class DocumentTagUI extends Plugin {
             addListToDropdown(dropdownView, getDropdownItemsDefinitions(tags))
 
             dropdownView.buttonView.set({
-                label: t( 'Taguri' ),
+                label: t('Taguri'),
                 tooltip: true,
                 withText: true
             })
 
             // Disable button when the command is disabled.
             const command = editor.commands.get('documentTag')
-            dropdownView.bind( 'isEnabled' ).to(command)
+            dropdownView.bind('isEnabled').to(command)
 
             // Execute the command when the dropdown item is clicked (executed).
-            this.listenTo( dropdownView, 'execute', evt => {
-                editor.execute('documentTag', { 'tag': evt.source.commandParam.tag })
+            this.listenTo(dropdownView, 'execute', evt => {
+                editor.execute('documentTag', { 'tag': evt.source.commandParam.tag} )
                 editor.editing.view.focus()
             })
 
@@ -36,7 +36,7 @@ export default class DocumentTagUI extends Plugin {
     }
 }
 
-function getDropdownItemsDefinitions( tags ) {
+function getDropdownItemsDefinitions(tags) {
     const itemDefinitions = new Collection()
 
     for (const tag of tags) {
