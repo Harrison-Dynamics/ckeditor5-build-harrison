@@ -11,7 +11,7 @@
 	</style>
 </head>
 <body>
-
+<h3>Configurare editor client</h3>
 <div id="editor1">
     <p>
     Prezența membrilor <span class="documentTag ck-widget ck-widget_selected" draggable="true" contenteditable="false">{{BENEFICIAR}}</span> la ședințele CA este obligatorie. CA este legal întrunit în ședință în prezența a cel puțin jumătate plus unu din totalul membrilor acestuia.
@@ -19,21 +19,37 @@
     <p>
     La toate şedinţele CA, reprezentantul elevilor, care a împlinit vârsta de 18 ani, participă cu drept de vot. În situaţiile în care la nivelul unităţii de învăţământ nu există elevi care au împlinit vârsta de 18 ani, reprezentantul elevilor este desemnat de consiliul elevilor şi participă cu statut de observator la şedinţele CA, fiind convocat obligatoriu de preşedintele CA la şedinţele în care se dezbat problematici privind elevii.
     </p>
+</div>
+
+<h3>Configurare editor consultant</h3>
+<div id="editor2">
     <p>
+        Prezența membrilor <span class="documentTag ck-widget ck-widget_selected" draggable="true" contenteditable="false">{{BENEFICIAR}}</span> la ședințele CA este obligatorie. CA este legal întrunit în ședință în prezența a cel puțin jumătate plus unu din totalul membrilor acestuia.
     </p>
+    <p>
+        La toate şedinţele CA, reprezentantul elevilor, care a împlinit vârsta de 18 ani, participă cu drept de vot. În situaţiile în care la nivelul unităţii de învăţământ nu există elevi care au împlinit vârsta de 18 ani, reprezentantul elevilor este desemnat de consiliul elevilor şi participă cu statut de observator la şedinţele CA, fiind convocat obligatoriu de preşedintele CA la şedinţele în care se dezbat problematici privind elevii.
+    </p>
+    <p>
+        Block de text
+    </p>
+    <p class="document-text-block"><span style="font-size:10px;">Linia 1</span></p>
+    <p class="document-text-block"><span style="font-size:12px;">Linia 2</span></p>
+    <p class="document-text-block"><span style="font-size:14px;">Linia 3</span></p>
 </div>
 
 <script src="../build/build.js"></script>
 <script src="../node_modules/@ckeditor/ckeditor5-inspector/build/inspector.js"></script>
 <script>
+    var testTags = [
+        {'label': 'Beneficiar', 'tag': 'BENEFICIAR'},
+        {'label': 'Nr. Editie', 'tag': 'NR_EDITIE'},
+        {'label': 'Nr. Revizie', 'tag': 'NR_REVIZIE'}
+    ]
+
     HarrisonEditor.create( document.querySelector( '#editor1' ), {
         documentTagConfig: {
-            tags: [
-                {'label': 'Beneficiar', 'tag': 'BENEFICIAR'},
-                {'label': 'Nr. Editie', 'tag': 'NR_EDITIE'},
-                {'label': 'Nr. Revizie', 'tag': 'NR_REVIZIE'}
-            ],
-            strictTags: false
+            tags: testTags,
+            strictTags: true
         }
     })
 	    .then( editor => {
@@ -43,6 +59,67 @@
 		.catch( error => {
 			console.error( 'There was a problem initializing the editor.', error );
 		} );
+
+    HarrisonEditor.create( document.querySelector( '#editor2' ), {
+        toolbar: {
+            items: [
+                "heading", 'fontSize',
+                "|",
+                "bold", "italic", "bulletedList", "numberedList",
+                "|",
+                "outdent", "indent", "alignment",
+                "|",
+                "imageUpload", "insertTable", "undo", "redo", "documentTag"
+            ]
+        },
+        language: "ro",
+        image: {
+            toolbar: [ "imageStyle:alignCenter","imageStyle:alignLeft","imageStyle:alignRight" ],
+            styles: [ "alignLeft", "alignCenter", "alignRight" ],
+            upload: {
+                types: [ "jpeg", "png", "webp", "svg+xml" ]
+            }
+        },
+        table: {
+            contentToolbar: [
+                "tableColumn",
+                "tableRow",
+                "mergeTableCells"
+            ]
+        },
+        documentTagConfig: {
+            tags: testTags,
+        },
+        fontSize: {
+            options: [8, 9, 10, 11, 12, 14, 16],
+            supportAllValues: true
+        },
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                {
+                    model: 'textBlock',
+                    view: {
+                        name: 'p',
+                        classes: 'document-text-block'
+                    },
+                    title: 'Bloc text',
+                    class: 'ck-heading_textBlock',
+                    converterPriority: 'high'
+                }
+            ]
+        }
+    })
+    .then( editor => {
+        window.editor = editor;
+        CKEditorInspector.attach( editor );
+    } )
+    .catch( error => {
+        console.error( 'There was a problem initializing the editor.', error );
+    } )
 </script>
 </body>
 </html>

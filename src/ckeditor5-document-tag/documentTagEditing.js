@@ -10,7 +10,7 @@ import './theme/documentTag.css'
 
 export default class DocumentTagEditing extends Plugin {
     static get requires() {
-        return [ Widget ]
+        return [Widget]
     }
 
     init() {
@@ -53,16 +53,16 @@ export default class DocumentTagEditing extends Plugin {
                 name: 'span',
                 classes: ['documentTag']
             },
-            model: (viewElement, { writer: modelWriter }) => {
+            model: (viewElement, {writer: modelWriter}) => {
                 const tag = viewElement.getChild(0).data.slice(2, -2).toUpperCase()
 
-                return modelWriter.createElement('documentTag', { tag } );
+                return modelWriter.createElement('documentTag', {tag});
             }
         })
 
         conversion.for('editingDowncast').elementToElement({
             model: 'documentTag',
-            view: ( modelItem, { writer: viewWriter } ) => {
+            view: (modelItem, {writer: viewWriter}) => {
                 const widgetElement = createDocumentTagView(modelItem, viewWriter)
 
                 return toWidget(widgetElement, viewWriter)
@@ -71,23 +71,23 @@ export default class DocumentTagEditing extends Plugin {
 
         conversion.for('dataDowncast').elementToElement({
             model: 'documentTag',
-            view: (modelItem, { writer: viewWriter }) => (
+            view: (modelItem, {writer: viewWriter}) => (
                 createDocumentTagView(modelItem, viewWriter)
             )
         })
 
         // Helper method for downcast converters.
-        function createDocumentTagView( modelItem, viewWriter ) {
+        function createDocumentTagView(modelItem, viewWriter) {
             const tagLabel = modelItem.getAttribute('tag').toUpperCase()
 
             const tagView = viewWriter.createContainerElement(
-              'span',
-              {
-                  class: 'documentTag'
-              },
-              {
-                isAllowedInsideAttributeElement: true
-              }
+                'span',
+                {
+                    class: 'documentTag'
+                },
+                {
+                    isAllowedInsideAttributeElement: true
+                }
             )
 
             const innerText = viewWriter.createText('{{' + tagLabel + '}}')

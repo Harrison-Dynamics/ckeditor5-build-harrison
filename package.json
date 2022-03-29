@@ -18,6 +18,7 @@
     "@ckeditor/ckeditor5-block-quote": "^33.0.0",
     "@ckeditor/ckeditor5-editor-classic": "^33.0.0",
     "@ckeditor/ckeditor5-essentials": "^33.0.0",
+    "@ckeditor/ckeditor5-font": "^33.0.0",
     "@ckeditor/ckeditor5-heading": "^33.0.0",
     "@ckeditor/ckeditor5-image": "^33.0.0",
     "@ckeditor/ckeditor5-indent": "^33.0.0",
