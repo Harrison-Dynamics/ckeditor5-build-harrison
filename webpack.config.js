@@ -30,10 +30,11 @@ module.exports = {
     ],
 
   	optimization: {
+        minimize: true,
 		minimizer: [
 			new TerserPlugin( {
-				sourceMap: true,
 				terserOptions: {
+				    sourceMap: true,
 					output: {
 						// Preserve CKEditor 5 license comments.
 						comments: /^!/
