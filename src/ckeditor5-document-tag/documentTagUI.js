@@ -31,6 +31,9 @@ export default class DocumentTagUI extends Plugin {
                 editor.editing.view.focus()
             })
 
+            // Inject additional class in dropdown template
+            dropdownView.panelView.template.attributes.class.push("ck-hd-list-scroll")
+
             return dropdownView
         })
     }
