@@ -6,3 +6,8 @@
 .ck .documentTag::selection {
     display: none;
 }
+
+.ck-hd-list-scroll {
+    overflow-x: auto;
+    max-height: 282px
+}
