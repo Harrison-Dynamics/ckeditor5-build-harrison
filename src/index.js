@@ -45,6 +45,7 @@ export default class HarrisonEditor extends ClassicEditorBase {
         Italic,
         Link,
         List,
+        ListProperties,
         Paragraph,
         PasteFromOffice,
         Table,
@@ -67,6 +68,11 @@ export default class HarrisonEditor extends ClassicEditorBase {
                 'imageStyle:block',
                 'imageStyle:side',
             ]
+        },
+        list: {
+            properties: {
+                styles: true,
+            }
         },
         language: 'ro'
     }
